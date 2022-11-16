@@ -12,6 +12,7 @@
   <tr>
     <th>Name</th>
     <th>Specialties</th>
+    <th>Insurance plan</th>
   </tr>
   </thead>
   <tbody>
@@ -20,6 +21,11 @@
     <td><span th:each="specialty : ${vet.specialties}"
               th:text="${specialty.name + ' '}"/> <span
       th:if="${vet.nrOfSpecialties == 0}">none</span></td>
+    <td>
+      <span th:if="${vet.nrOfSpecialties == 0}">Plan A</span>
+      <span th:if="${vet.nrOfSpecialties == 1}">Plan B</span>
+      <span th:if="${vet.nrOfSpecialties == 2}">Plan C</span>
+    </td>
   </tr>
   </tbody>
 </table>
